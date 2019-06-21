@@ -2,7 +2,9 @@
 #include <string.h>
 #include <math.h>
 #include <stdlib.h>
-
+/*
+    menghitung banyaknya jumlah digits 0-9
+*/
 int main() {
 
     /* Enter your code here. Read input from STDIN. Print output to STDOUT */  

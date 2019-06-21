@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-
+/*
+    mengurutkan luas segitiga dari yang terkecil jika diketahui sisi-sisinya
+*/
 struct triangle
 {
 	int a;
@@ -10,23 +12,16 @@ struct triangle
 };
 
 typedef struct triangle triangle;
+
 void sort_by_area(triangle* tr, int n) {
-	/**
-	* Sort an array a of the length n
-	*/
 	int i,j;
-	// Sort an array a of the length n
     int *p=malloc(n*sizeof(float)); 
-//create array of size n to store "volumes"
-    for(i=0;i<n;i++)
-    {
-	float a=(tr[i].a+tr[i].b+tr[i].c)/2.0;
-//use 2.0 compulsary int/int gives int, int/float gives float
+
+    for(i=0;i<n;i++){
+    	float a=(tr[i].a+tr[i].b+tr[i].c)/2.0;
        p[i]=(a*(a-tr[i].a)*(a-tr[i].b)*(a-tr[i].c));
-//formula without sqrt as areas are different guarenteed 
-//because sqrt dosent work well with float values
     }
-//bubble sort
+    //bubble sort
     for(i=0;i<n;i++)    
     {
         for(j=0;j<n-i-1;j++)
@@ -36,8 +31,7 @@ void sort_by_area(triangle* tr, int n) {
                 int temp=p[j];
                 p[j]=p[j+1];
                 p[j+1]=temp;
-//swapping array of areas in ascending
-//and simuntaneously the structure contents
+
                 temp=tr[j].a;
                 tr[j].a=tr[j+1].a;
                 tr[j+1].a=temp;

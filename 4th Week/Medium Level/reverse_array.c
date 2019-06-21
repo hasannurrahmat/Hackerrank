@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+/*
+    membalikkan nilai array dengan menggunakan pointer
+*/
 int main()
 {
     int num, *arr, i;
